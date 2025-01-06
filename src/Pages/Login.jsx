@@ -50,7 +50,7 @@ const Login = () => {
             console.log(userData);
             axios
                 .post(
-                    "https://boss2-k-back-end.vercel.app/api/adminlogin",
+                    "https://new-swifteatrn-back-end.vercel.app/api/adminlogin",
                     userData
                 )
                 .then((res) => {
