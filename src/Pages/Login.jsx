@@ -135,7 +135,7 @@ const Login = () => {
                         </div>
                         <div className="w-full text-center">
                             <p className="text-sm">
-                                © Copyright 2024 Fininvestohub All Rights
+                                © Copyright 2024 Swifteatrn Prime All Rights
                                 Reserved.
                             </p>
                         </div>
