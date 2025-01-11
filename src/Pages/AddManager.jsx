@@ -7,7 +7,7 @@ const AddManager = () => {
 const [adminWallet, setAdminWaller] = useState()
 
   const getallDeposit = () => {
-    const url = "https://new-swifteatrn-back-end.vercel.app/api/getallWalletAddress";
+    const url = "https://new-swifteatrn-back-end-nine.vercel.app/api/getallWalletAddress";
     axios.get(url)
         .then((response) => {
             console.log(response.data);
@@ -26,7 +26,7 @@ useEffect(() => {
 const handleDelete = (walletId) => {
   console.log(walletId)
   const toastLoadingId = toast.loading("Please wait...");
-  const url = `https://new-swifteatrn-back-end.vercel.app/api/deleteWalletAddress/${walletId}`;
+  const url = `https://new-swifteatrn-back-end-nine.vercel.app/api/deleteWalletAddress/${walletId}`;
   axios
       .delete(url)
       .then((res) => {

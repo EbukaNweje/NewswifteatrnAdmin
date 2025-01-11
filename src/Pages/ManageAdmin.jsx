@@ -10,7 +10,7 @@ const ManageAdmin = () => {
   const [coin, setCoin] = useState();
 
   const AddWallet = () => {
-    const url = `https://new-swifteatrn-back-end.vercel.app/api/createWalletAddress`;
+    const url = `https://new-swifteatrn-back-end-nine.vercel.app/api/createWalletAddress`;
     const toastLoadingId = toast.loading("Please wait...");
 
     const data = {walletName,walletAddress,coin}

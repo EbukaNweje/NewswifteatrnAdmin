@@ -20,7 +20,7 @@ const ManageUsers = () => {
     const [showIcon, setShowIcon] = useState(true);
 
     const getAllUserData = () => {
-        const url = "https://new-swifteatrn-back-end.vercel.app/api/alluserdata";
+        const url = "https://new-swifteatrn-back-end-nine.vercel.app/api/alluserdata";
         axios
             .get(url)
             .then((response) => {
@@ -84,7 +84,7 @@ const ManageUsers = () => {
           email: email,
         };
 
-        fetch('https://new-swifteatrn-back-end.vercel.app/api/adminAproveEmailSand', {
+        fetch('https://new-swifteatrn-back-end-nine.vercel.app/api/adminAproveEmailSand', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -104,7 +104,7 @@ const ManageUsers = () => {
 
 
     const Verify = (id) => { 
-            const url = `https://new-swifteatrn-back-end.vercel.app/api/UserVerify/${id}`;
+            const url = `https://new-swifteatrn-back-end-nine.vercel.app/api/UserVerify/${id}`;
             axios.patch(url)
                 .then((response) => {
                     console.log(response.data.data.email);
