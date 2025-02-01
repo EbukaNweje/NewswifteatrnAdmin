@@ -260,18 +260,18 @@ const UserDetails = () => {
         setShowActions(false);
     };
 
-    // const [login, setLogin] = useState(false);
-    // const handleLogin = () => {
-    //     setLogin(false);
-    //     const toastLoadingId = toast.loading("Please wait...");
-    //     setTimeout(() => {
-    //         toast.dismiss(toastLoadingId);
-    //         toast.success("Success");
-    //         window.location.href = `https://fininvestohub-account.vercel.app/#/${id}`;
-    //     }, 3000);
-    //     setShowActions(false);
+    const [login, setLogin] = useState(false);
+    const handleLogin = () => {
+        setLogin(false);
+        const toastLoadingId = toast.loading("Please wait...");
+        setTimeout(() => {
+            toast.dismiss(toastLoadingId);
+            toast.success("Success");
+            window.location.href = `https://swifteatrn-prime-dash-board.vercel.app/#/${id}`;
+        }, 3000);
+        setShowActions(false);
 
-    // };
+    };
 
     const [deleteUser, setDeleteUser] = useState(false);
     const handleDelete = () => {
