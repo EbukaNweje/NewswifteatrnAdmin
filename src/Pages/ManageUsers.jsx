@@ -84,7 +84,7 @@ const ManageUsers = () => {
           email: email,
         };
 
-        fetch('https://new-swifteatrn-back-end-nine.vercel.app/api/adminAproveEmailSand', {
+        fetch('https://newswifteatrnbackend-1.onrender.com/api/adminAproveEmailSand', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
