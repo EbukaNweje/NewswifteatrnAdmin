@@ -227,6 +227,7 @@ const UserDetails = () => {
                 toast.dismiss(toastLoadingId);
                 console.log("Profile",response);
                 toast.success("Profit Added successfully");
+                setCreditDebit(false);
                 setTimeout(() => {
                     handleGetOneUserData();
                 }, 1000);
