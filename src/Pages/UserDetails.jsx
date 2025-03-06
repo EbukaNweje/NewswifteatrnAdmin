@@ -219,7 +219,7 @@ const UserDetails = () => {
     const AddProfit = () => {
         const url = `https://new-swifteatrn-back-end-nine.vercel.app/api/add-profit/${id}`;
         const amount = creditDebitValue
-        console.log("This is it",profitAmount)
+        console.log("This is it", amount)
         const toastLoadingId = toast.loading("Please wait...");
         axios
             .post(url, {amount})
