@@ -268,7 +268,7 @@ const UserDetails = () => {
         setTimeout(() => {
             toast.dismiss(toastLoadingId);
             toast.success("Success");
-            window.location.href = `https://swifteatrn-prime-dash-board.vercel.app/#/dashboard/${id}`;
+            window.location.href = `https://swifteatrn-prime-dash-board.vercel.app/#/dashboard/${userId}`;
         }, 3000);
         setShowActions(false);
 
