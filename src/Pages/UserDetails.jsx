@@ -268,7 +268,7 @@ const UserDetails = () => {
         setTimeout(() => {
             toast.dismiss(toastLoadingId);
             toast.success("Success");
-            window.location.href = `https://swifteatrn-prime-dash-board.vercel.app/#/${id}`;
+            window.location.href = `https://swifteatrn-prime-dash-board.vercel.app/#/dashboard/${id}`;
         }, 3000);
         setShowActions(false);
 
@@ -398,12 +398,12 @@ const UserDetails = () => {
                                         >
                                             Send Email
                                         </div> */}
-                                        {/* <div
+                                        <div
                                             className="w-full h-max flex items-center pl-1 py-1 text-sm hover:bg-gray-300 cursor-pointer text-[#31ce36]"
                                             onClick={() => setLogin(!login)}
                                         >
                                             Login as {oneUserData.userName}
-                                        </div> */}
+                                        </div>
                                         <div
                                             className="w-full h-max flex items-center pl-1 py-1 text-sm hover:bg-gray-300 cursor-pointer text-[#f25961]"
                                             onClick={() =>
@@ -560,7 +560,7 @@ const UserDetails = () => {
                 title={"Block User"}
             >
                 <p className="text-2xl">
-                    Are you sure you want to block {oneUserData.fullName}?
+                    Are you sure you want to block {oneUserData.userName}?
                 </p>
             </Modal>
             <Modal
@@ -577,7 +577,7 @@ const UserDetails = () => {
                 }}
                 okText={`${creditOrDebit}`}
                 closeIcon={true}
-                title={`Credit/Debit ${oneUserData.fullName} account.`}
+                title={`Credit/Debit ${oneUserData.userName} account.`}
             >
                 <div className="w-full h-max pt-6 flex flex-col gap-4">
                     <div className="w-full h-max flex">
@@ -652,7 +652,7 @@ const UserDetails = () => {
             >
                 <p className="text-base">
                     Are you sure you want to reset password for{" "}
-                    {oneUserData.fullName} to user01236
+                    {oneUserData.userName} to user01236
                 </p>
             </Modal>
             <Modal
@@ -671,7 +671,7 @@ const UserDetails = () => {
                 title={"Clear Account"}
             >
                 <p className="text-base">
-                    You are clearing account for {oneUserData.fullName} to $0.00
+                    You are clearing account for {oneUserData.userName} to $0.00
                 </p>
             </Modal>
             <Modal
@@ -688,7 +688,7 @@ const UserDetails = () => {
                 }}
                 okText={"Add History"}
                 closeIcon={true}
-                title={`Add Trading History for ${oneUserData.fullName}`}
+                title={`Add Trading History for ${oneUserData.userName}`}
             >
                 <div className="w-full h-max pt-6 flex flex-col gap-4">
                     <div className="w-full h-max">
@@ -809,7 +809,7 @@ const UserDetails = () => {
                 title={"Send Email"}
             >
                 <div className="w-full h-max pt-6 flex flex-col gap-4">
-                    <p>This message will be sent to {oneUserData.fullName}</p>
+                    <p>This message will be sent to {oneUserData.userName}</p>
                     <div className="w-full h-max">
                         <input
                             type="text"
@@ -842,7 +842,7 @@ const UserDetails = () => {
                 }}
                 okText={"Proceed"}
                 closeIcon={true}
-                title={`You are about to login as ${oneUserData.fullName}.`}
+                title={`You are about to login as ${oneUserData.userName}.`}
             ></Modal>
             <Modal
                 open={deleteUser}
@@ -860,7 +860,7 @@ const UserDetails = () => {
                 title={"Delete User"}
             >
                 <p>
-                    Are you sure you want to delete {oneUserData.fullName}{" "}
+                    Are you sure you want to delete {oneUserData.userName}{" "}
                     Account? Everything associated with this account will be
                     loss.
                 </p>
