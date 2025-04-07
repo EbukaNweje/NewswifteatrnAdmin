@@ -10,6 +10,14 @@ const UserDetails = () => {
 
     const [oneUserData, setOneUserData] = useState({});
     const {id} = useParams();
+    const [emaildatas, setEmaildatas] = useState({
+        subject: "",
+        msg: "",
+    });
+
+    console.log(emaildatas);
+
+    const userId = id
 
     const Nav = useNavigate()
 
@@ -254,11 +262,22 @@ const UserDetails = () => {
     const handleSendEmail = () => {
         setSendEmail(false);
         const toastLoadingId = toast.loading("Please wait...");
-        setTimeout(() => {
-            toast.dismiss(toastLoadingId);
-            toast.success("Email sent successfully");
-        }, 3000);
-        setShowActions(false);
+            const url = `https://newswifteatrnbackend-1.onrender.com/api/adminsendemail/${id}`;
+            axios
+                .post(url, emaildatas)
+                .then((response) => {
+                    console.log(response);
+                    toast.success("Email sent successfully");
+                    setTimeout(() => {
+                        toast.dismiss(toastLoadingId);
+                        handleGetOneUserData();
+                    }, 1000);
+                    setShowActions(false);
+                }).catch((error) => {
+                    console.log(error);
+                    toast.dismiss(toastLoadingId);
+                    setShowActions(false);
+                })
     };
 
     const [login, setLogin] = useState(false);
@@ -390,14 +409,14 @@ const UserDetails = () => {
                                         {/* <div className="w-full h-7 flex items-center pl-1 text-sm hover:bg-gray-300 cursor-pointer">
                                             Add Referral
                                         </div> */}
-                                        {/* <div
+                                        <div
                                             className="w-full h-7 flex items-center pl-1 text-sm hover:bg-gray-300 cursor-pointer"
                                             onClick={() =>
                                                 setSendEmail(!sendEmail)
                                             }
                                         >
                                             Send Email
-                                        </div> */}
+                                        </div>
                                         <div
                                             className="w-full h-max flex items-center pl-1 py-1 text-sm hover:bg-gray-300 cursor-pointer text-[#31ce36]"
                                             onClick={() => setLogin(!login)}
@@ -815,6 +834,8 @@ const UserDetails = () => {
                             type="text"
                             placeholder="Subject"
                             className="w-full h-10 pl-4 border border-gray-200 rounded-r outline-sky-300"
+                            value={emaildatas.subject}
+                            onChange={(e)=> setEmaildatas({...emaildatas,subject: e.target.value})}
                         />
                     </div>
                     <div className="w-full h-max">
@@ -824,6 +845,8 @@ const UserDetails = () => {
                             cols="30"
                             rows="10"
                             className="w-full h-20 pl-4 border border-gray-200 rounded-r outline-sky-300"
+                            value={emaildatas.message}
+                            onChange={(e)=> setEmaildatas({...emaildatas,msg: e.target.value})}
                         ></textarea>
                     </div>
                 </div>
